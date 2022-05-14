@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <script src="./main.js"></script>
+</head>
+<body>
+    <!--  Header Area  -->
+    <section class="h-screen">
+        <div class=" relative overflow-hidden">
+            <div class="hidden sm:block absolute top-0 left-0 h-full w-full">
+                <img src="./img/bg-1.png" class=" h-full  object-cover" alt="">
+            </div>
+            <div class=" hidden sm:block absolute -top-4 left-96 h-full">
+                <img src="./img/header-1.png" class="scale-110 h-full object-cover" alt="">
+            </div>
+            <div class="hidden sm:block absolute w-11/12 z-30 top-5 left-[5%] sm:flex justify-between items-center">
+                <div class="logo">
+                    <img src="./img/logo.png" class="w-40" alt="resturant logo">
+                </div>
+                <div class="flex gap-x-20 items-center text-white text-2xl">
+                    <a href="" class=" text-app-color-one transition-all font-GrandHotel  ">Home</a>
+                    <a href="" class=" hover:text-app-color-one transition-all">Product</a>
+                    <a href="" class=" hover:text-app-color-one transition-all">Promo</a>
+                    <a href="" class=" hover:text-app-color-one transition-all">About</a>
+                    <a href="" class=" hover:text-app-color-one  transition-all">Contact</a>
+                    <a href="">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                      </svg>
+                    </a>
+                </div>
+            </div>
+            <!-- mobile nav -->
+            <div class="absolute sm:hidden top-0 left-0 w-full flex justify-between items-center z-50 px-4 mt-2">
+                <div>
+                    <img src="./img/logo.png" class="w-28" alt="">
+                </div>
+                <div class=" flex flex-col justify-end items-end gap-y-1 cursor-pointer" onclick="menuToggle(this)">
+                    <div class="w-6 h-px bg-gray-100"></div>
+                    <div class="w-4 h-px bg-gray-100"></div>
+                    <div class="w-6 h-px bg-gray-100"></div>
+                </div>
+            </div>
+            <!-- mobile nav end -->
+            <div class="w-full flex h-screen  justify-end main-header overflow-hidden">
+                
+                <div class=" relative w-full sm:w-3/5 z-10 h-full bg-[#303030] ">
+                    <div class="absolute top-20 left-3 hidden sm:block">
+                        <img src="./img/v-one.png" class="w-6 object-cover" alt="">
+                    </div>
+
+                    <div class="absolute top-28 right-36 hidden sm:block">
+                        <img src="./img/v-two.png" class="w-28 object-cover" alt="">
+                    </div>
+                    
+                    <div class="absolute top-80 right-24 hidden sm:block">
+                        <img src="./img/v-one.png" class="w-8 object-cover" alt="">
+                    </div>
+                    
+                    <div class="absolute bottom-20 right-28 hidden sm:block">
+                        <img src="./img/v-three.png" class="w-24 object-cover -rotate-45" alt="">
+                    </div>
+                    
+                    <div class="absolute bottom-5 right-60 hidden sm:block">
+                        <img src="./img/v-four.png" class="w-5 object-cover" alt="">
+                    </div>
+                    
+                    <div class="absolute bottom-10 right-96 hidden sm:block">
+                        <img src="./img/v-one.png" class="w-10 object-cover" alt="">
+                    </div>
+                    
+                    <div class="absolute bottom-12 left-44 hidden sm:block">
+                        <img src="./img/v-five.png" class="w-16 object-cover" alt="">
+                    </div>
+
+                    <div class="absolute bottom-28 left-0 hidden sm:block">
+                        <img src="./img/v-one.png" class="w-5 object-cover" alt="">
+                    </div>
+
+                    <div class="absolute bottom-80 -left-28 hidden sm:block">
+                        <img src="./img/v-six.png" class="w-24 object-cover" alt="">
+                    </div>
+                    
+                
+                    <div class="flex flex-col gap-y-8 ml-10 mr-10 my-28 sm:my-36 w-3/4">
+                        <h1 class=" text-5xl sm:text-9xl font-GrandHotel text-app-color-one">Title Here</h1>
+                        <p class=" text-sm text-white sm:text-3xl font-Montserrat font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. </p>
+                        <a href="#" class="inline bg-app-color-one text-app-color-two text-center py-2 w-36 sm:w-1/3 rounded-md text-sm sm:text-xl font-bold hover:bg-white transition-all">Order Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- mobile sidebar -->
+    <!-- dropdown menus -->
+    <div id="menuItems" class="w-1/2 sm:w-1/3 h-full bg-white fixed top-0 px-2 py-2 esm:px-8 esm:py-4 z-50 shadow-2xl font-semibold -translate-x-full transition-all">
+        <div id="hiddenMenuButton" class="hidden absolute top-10 -right-7 p-1 bg-white text-app-blue-one rounded-full shadow-lg cursor-pointer">
+            <svg onclick="menuToggle(this)" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+              </svg>
+        </div>
+        <ul class="flex flex-col capitalize divide-y text-app-blue-four text-xs sm:text-base">
+            <div class="w-full h-auto esm:w-28">
+                <img src="./img/logo.png" class="w-full h-full py-2" alt="">
+            </div>
+            <li class="py-2"><a href="./index.html" class="block pl-2 hover:pl-4 transition-all">home</a></li>
+            <li class="py-2"><a href="./course.html" class="block pl-2 hover:pl-4 transition-all">course</a></li>
+            <li class="py-2"><a href="./lecture.html" class="block pl-2 hover:pl-4 transition-all">lecture</a></li>
+            <li class="py-2"><a href="./exam.html" class="block pl-2 hover:pl-4 transition-all">exam</a></li>
+            <li class="py-2"><a href="./favourite-questions.html" class="block pl-2 hover:pl-4 transition-all">favourite list</a></li>
+            <li class="py-2"><a href="./video.html" class="block pl-2 hover:pl-4 transition-all">videos</a></li>
+            <li class="py-2"><a href="./audio.html" class="block pl-2 hover:pl-4 transition-all">audio</a></li>
+            <li class="py-2"><a href="./notice.html" class="block pl-2 hover:pl-4 transition-all">notice</a></li>
+        </ul>
+    </div>
+    <!-- menus end -->
+
+    <section class="container py-16 sm:py-32">
+        <div class="flex flex-col gap-y-16">
+            <div class="flex flex-col justify-center items-center">
+                <h1 class=" text-4xl sm:text-7xl font-GrandHotel text-app-color-two capitalize">best seller</h1>
+                <p class=" text-sm sm:text-2xl font-Montserrat text-app-color-two text-center">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, minima repudiandae corporis, provident dolores deleniti inventore obcaecati.
+                </p>
+            </div>
+            <div class=" flex flex-col sm:flex-row sm:gap-x-10">
+                <div class=" w-full sm:w-1/3 flex flex-col mb-5 gap-y-5 justify-center items-center">
+                    <div class=" w-32 sm:w-60  h-32 sm:h-60 sm:mx-auto rounded-full overflow-hidden">
+                        <img src="./img/s-img-one.png" class=" max-w-full bg-cover" alt="">
+                    </div>
+                    <div class="flex flex-col justify-center items-center">
+                        <h3 class="text-3xl sm:text-5xl font-GrandHotel text-app-color-two">Title Here</h3>
+                        <p class="text-sm sm:text-base text-app-color-two font-Montserrat text-center">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        </p>
+                    </div>
+                </div>
+                <div class="w-full sm:w-1/3 flex flex-col mb-5 gap-y-5 justify-center items-center">
+                    <div class=" w-32 sm:w-60  h-32 sm:h-60 sm:mx-auto rounded-full overflow-hidden">
+                        <img src="./img/s-img-two.png" class=" max-w-full bg-cover" alt="">
+                    </div>
+                    <div class="flex flex-col justify-center items-center">
+                        <h3 class="text-3xl sm:text-5xl font-GrandHotel text-app-color-two">Title Here</h3>
+                        <p class="text-sm sm:text-base text-app-color-two font-Montserrat text-center">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        </p>
+                    </div>
+                </div>
+                <div class="w-full sm:w-1/3 flex flex-col mb-5 gap-y-5 justify-center items-center">
+                    <div class=" w-32 sm:w-60  h-32 sm:h-60 sm:mx-auto rounded-full overflow-hidden">
+                        <img src="./img/s-img-three.png" class=" max-w-full bg-cover" alt="">
+                    </div>
+                    <div class="flex flex-col justify-center items-center">
+                        <h3 class=" text-3xl sm:text-5xl font-GrandHotel text-app-color-two">Title Here</h3>
+                        <p class=" text-sm sm:text-base text-app-color-two font-Montserrat text-center">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class=" relative  mt-28 mb-0 sm:py-32  ">
+        <div class=" bg-[#303030] h-64 sm:h-0">
+            <div class="  absolute -top-20 sm:-top-52 right-0  -z-10 ">
+                <img src="./img/header-2.png" class=" " alt="">
+            </div>
+            <div class=" container absolute -top-24 z-30">
+                <div class="flex flex-col sm:flex-row justify-center items-center sm:justify-between ">
+                    <div class="w-[50%] ">
+                        <img src="./img/img-one.png" class=" w-24 h-24 sm:w-96 sm:h-96 rounded-full" alt="">
+                    </div>
+                    <div class="flex flex-col gap-6 mt-5 sm:mt-32 w-full justify-center text-center items-center sm:w-[50%] ">
+                        <h2 class=" text-4xl sm:text-8xl font-GrandHotel text-app-color-one">Oriental Taste</h2>
+                        <p class=" text-sm sm:text-xl font-Montserrat text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. </p>
+                        <a href="#" class="inline bg-app-color-one text-app-color-two text-center py-2 w-36 sm:w-1/3 rounded-md text-sm sm:text-xl font-bold hover:bg-white transition-all">Order Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="relative bg-[#303030] sm:mt-16 sm:py-16">
+        <div class="absolute top-20 left-80 hidden sm:block">
+            <img src="./img/v-one.png" class="w-6 object-cover opacity-50" alt="">
+        </div>
+
+        <div class="absolute top-10 right-64 hidden sm:block">
+            <img src="./img/v-two.png" class="w-28 object-cover rotate-90 opacity-50" alt="">
+        </div>
+        
+        <div class="absolute top-56 right-32 hidden sm:block">
+            <img src="./img/v-one.png" class="w-8 object-cover opacity-50" alt="">
+        </div>
+        
+        <div class="absolute bottom-44 right-16 hidden sm:block">
+            <img src="./img/v-three.png" class="w-16 object-cover -rotate-45 opacity-50" alt="">
+        </div>
+        
+        <div class="absolute bottom-5 right-32 hidden sm:block">
+            <img src="./img/v-four.png" class="w-5 object-cover rotate-45 opacity-50" alt="">
+        </div>
+        
+        <div class="absolute bottom-10 right-96 hidden sm:block">
+            <img src="./img/v-five.png" class="w-20 object-cover opacity-50" alt="">
+        </div>
+        
+        <div class="absolute bottom-16 left-96 hidden sm:block">
+            <img src="./img/v-two.png" class="w-20 object-cover rotate-180 opacity-50" alt="">
+        </div>
+
+        <div class="absolute bottom-10 left-24 hidden sm:block">
+            <img src="./img/v-one.png" class="w-6 object-cover opacity-50" alt="">
+        </div>
+
+        <div class="absolute bottom-96 left-16 hidden sm:block">
+            <img src="./img/v-six.png" class="w-24 object-cover rotate-45 opacity-50" alt="">
+        </div>
+        
+
+        <div class=" flex flex-col gap-y-20 container py-20">
+            <div class="flex flex-col w-4/5 mx-auto justify-center items-center">
+                <h1 class=" text-4xl sm:text-7xl font-GrandHotel text-app-color-one capitalize">best seller</h1>
+                <p class=" text-sm sm:text-2xl font-Montserrat text-white text-center">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, minima repudiandae corporis, provident dolores deleniti inventore obcaecati.
+                </p>
+            </div>
+            <div class=" w-full flex flex-col mx-auto sm:flex-row sm:justify-between items-center gap-y-5">
+                <div class="flex sm:w-56 w-32 sm:h-56 h-32 flex-col sm:gap-y-2 justify-center sm:justify-start text-center border-2 py-16 items-center rounded-full">
+                    <p class=" text-2xl sm:text-5xl font-Montserrat text-app-color-one">120</p>
+                    <p class=" text-sm sm:text-2xl text-white font-Montserrat uppercase font-bold">outlets</p>
+                </div>
+                <div class="flex sm:w-56 w-32 sm:h-56 h-32 flex-col sm:gap-y-2 justify-center sm:justify-start text-center border-2 py-16 items-center rounded-full">
+                    <p class=" text-2xl sm:text-5xl font-Montserrat text-app-color-one">120</p>
+                    <p class=" text-sm sm:text-2xl text-white font-Montserrat uppercase font-bold">outlets</p>
+                </div>
+                <div class="flex sm:w-56 w-32 sm:h-56 h-32 flex-col sm:gap-y-2 justify-center sm:justify-start text-center border-2 py-16 items-center rounded-full">
+                    <p class=" text-2xl sm:text-5xl font-Montserrat text-app-color-one">120</p>
+                    <p class=" text-sm sm:text-2xl text-white font-Montserrat uppercase font-bold">outlets</p>
+                </div>
+                <div class="flex sm:w-56 w-32 sm:h-56 h-32 flex-col sm:gap-y-2 justify-center sm:justify-start text-center border-2 py-16 items-center rounded-full">
+                    <p class=" text-2xl sm:text-5xl font-Montserrat text-app-color-one">120</p>
+                    <p class=" text-sm sm:text-2xl text-white font-Montserrat uppercase font-bold">outlets</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class=" relative sm:py-32 h-screen">
+        <div class=" bg-[#303030] h-72 sm:h-0"></div>
+            <div class="  absolute top-64 sm:top-0 right-0  -z-10 ">
+                <img src="./img/header-2.png" class=" rotate-180" alt="">
+            </div>
+            <div class=" container absolute top-0 sm:top-0 ">
+                <div class="flex flex-col sm:flex-row gap-y-16 justify-center  items-center sm:justify-between ">
+                    <div class="flex flex-col gap-6 mt-5 sm:mt-32 w-full justify-center text-center items-center sm:w-[50%] ">
+                        <h2 class=" text-4xl sm:text-8xl font-GrandHotel text-app-color-one">Oriental Taste</h2>
+                        <p class=" text-sm sm:text-xl font-Montserrat text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. </p>
+                        <a href="#" class="inline bg-app-color-one text-app-color-two text-center py-2 w-36 sm:w-1/3 rounded-md text-sm sm:text-xl font-bold hover:bg-white transition-all">Order Now</a>
+                    </div>
+                    <div class=" sm:w-[35%] w-[50%] sm:mt-24">
+                        <img src="./img/img-two.png" class=" w-24 h-24 sm:w-96 sm:h-96 rounded-full" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class=" relative sm:h-screen sm:mt-20">
+        <div class="">
+            <img src="./img/img-three.png" class="" alt="">
+        </div>
+        <div class=" absolute top-0 left-0 w-full h-[100%] bg-app-color-one z-10 opacity-80"></div>
+        <div class=" absolute top-0 left-0 w-full h-[100%] bg-[#fff000] z-20 opacity-60"></div>
+        <div class="flex flex-col gap-y-2 sm:gap-y-8 justify-center text-center  w-3/5 mx-auto absolute top-8 sm:top-44 left-10 sm:left-60 z-30">
+            <p class=" text-[9px] sm:text-5xl font-Montserrat text-app-color-two"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore excepturi, tempore, nulla nostrum alias sapiente.</p>
+            <h2 class=" text-3xl sm:text-7xl font-GrandHotel text-app-color-two font-bold">Lenora Fields</h2>
+        </div>
+    </section>
+
+    <section class="relative bg-[#f4f4f4] py-16">
+        <div class="absolute top-20 left-80">
+            <img src="./img/v-one.png" class="w-6 object-cover opacity-50 hidden sm:block" alt="">
+        </div>
+
+        <div class="absolute top-8 right-64">
+            <img src="./img/v-two.png" class="w-24 object-cover rotate-90 opacity-50 hidden sm:block" alt="">
+        </div>
+        
+        <div class="absolute top-56 right-32">
+            <img src="./img/v-one.png" class="w-8 object-cover opacity-50 hidden sm:block" alt="">
+        </div>
+        
+        <div class="absolute bottom-44 right-16">
+            <img src="./img/v-three.png" class="w-16 object-cover -rotate-45 opacity-50 hidden sm:block" alt="">
+        </div>
+        
+        <div class="absolute bottom-5 right-32">
+            <img src="./img/v-four.png" class="w-5 object-cover rotate-45 opacity-50 hidden sm:block" alt="">
+        </div>
+        
+        <div class="absolute bottom-10 right-96">
+            <img src="./img/v-five.png" class="w-20 object-cover opacity-50 hidden sm:block" alt="">
+        </div>
+        
+        <div class="absolute bottom-16 left-96">
+            <img src="./img/v-two.png" class="w-20 object-cover rotate-180 opacity-50 hidden sm:block" alt="">
+        </div>
+
+        <div class="absolute bottom-10 left-24">
+            <img src="./img/v-one.png" class="w-6 object-cover opacity-50 hidden sm:block" alt="">
+        </div>
+
+        <div class="absolute bottom-96 left-16">
+            <img src="./img/v-six.png" class="w-24 object-cover rotate-45 opacity-50 hidden sm:block" alt="">
+        </div>
+        
+
+        <div class=" flex flex-col gap-y-16 sm:gap-y-32 container sm:py-20 sm:pb-48">
+            <div class="flex flex-col w-4/5 mx-auto justify-center items-center">
+                <h1 class=" text-4xl sm:text-7xl font-GrandHotel text-app-color-teo capitalize">best seller</h1>
+                <p class=" text-sm sm:text-2xl font-Montserrat text-app-color-two text-center">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, minima repudiandae corporis, provident dolores deleniti inventore obcaecati.
+                </p>
+            </div>
+            <div class="flex w-full sm:w-3/5 mx-auto">
+                <input class=" placeholder:text-[#a6a6a6] placeholder:font-Montserrat placeholder:text-sm text-[#999] block bg-[#f4f4f4] w-full  py-1 pl-3 pr-3 shadow-[5px_0px_40px_5px_rgba(0,0,0,0.1)] focus:outline-none  text-sm   sm:text-xl  " placeholder="Your Email..." type="text" name="search"/>
+                <input class=" bg-app-color-one py-1 px-1 sm:px-8 sm:py-2 uppercase hover:bg-app-color-two hover:text-white text-app-color-two font-Montserrat text-[8px] sm:text-2xl sm:font-bold" type="submit" name="submit" value="Subscribe">
+            </div>
+           
+        </div>
+    </section>
+    
+    <section class=" bg-app-color-two py-16 sm:py-52">
+        <div class=" container flex flex-col sm:flex-row gap-10 mx-auto justify-between">
+            <div class=" w-full sm:w-[40%] flex flex-col gap-y-6 justify-center items-center text-center">
+                <div class=" flex flex-col gap-y-3">
+                    <h3 class=" text-xl sm:text-2xl font-Montserrat text-white font-bold uppercase">Title Here</h3>
+                    <p class=" text-sm sm:text-xl font-Montserrat text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at dignissim nunc, id maximus ex. Etiam nec dignissim elit, at dignissim enim. </p>
+                </div>
+                <div class=" flex gap-x-4">
+                    <a href="" class=" w-8  h-8 sm:w-12 sm:h-12 rounded-full py-1 px-[10px] sm:py-2 sm:px-4 text-base sm:text-2xl bg-white text-app-color-two hover:bg-app-color-one hover:text-white"><i class="fa fa-facebook "></i></a>
+                    <a href="" class=" w-8  h-8 sm:w-12 sm:h-12 rounded-full py-1 px-[10px] sm:py-2 sm:px-[14px] text-base sm:text-2xl bg-white text-app-color-two hover:bg-app-color-one hover:text-white"><i class="fa fa-twitter"></i></a>
+                    <a href="" class=" w-8  h-8 sm:w-12 sm:h-12 rounded-full py-[2px] px-[10px] sm:py-[6px] sm:px-[14px] text-base sm:text-2xl bg-white text-app-color-two hover:bg-app-color-one hover:text-white"><i class="fa fa-linkedin"></i></a>
+                    <a href="" class=" w-8  h-8 sm:w-12 sm:h-12 rounded-full py-[3px] px-[10px] sm:py-2 sm:px-[14px] text-base sm:text-2xl bg-white text-app-color-two hover:bg-app-color-one hover:text-white"><i class="fa fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class=" w-full sm:w-[50%] flex flex-col sm:flex-row gap-y-6 sm:gap-x-10 justify-center items-center text-center">
+                <div class="flex flex-col gap-y-3">
+                    <h3 class=" text-2xl font-Montserrat font-bold text-white">About</h3>
+                    <div class="flex flex-col text-sm sm:text-base font-Montserrat text-white">
+                        <a href="" class=" hover:text-app-color-one transition-all">History</a>
+                        <a href="" class=" hover:text-app-color-one transition-all">Our Team</a>
+                        <a href="" class=" hover:text-app-color-one transition-all">Brand Guidelines</a>
+                        <a href="" class=" hover:text-app-color-one transition-all">Terms & Condition</a>
+                        <a href="" class=" hover:text-app-color-one transition-all">Privacy Policy</a>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-y-3">
+                    <h3 class=" text-2xl font-Montserrat font-bold text-white">About</h3>
+                    <div class="flex flex-col text-sm sm:text-base font-Montserrat text-white">
+                        <a href="" class=" hover:text-app-color-one transition-all">History</a>
+                        <a href="" class=" hover:text-app-color-one transition-all">Our Team</a>
+                        <a href="" class=" hover:text-app-color-one transition-all">Brand Guidelines</a>
+                        <a href="" class=" hover:text-app-color-one transition-all">Terms & Condition</a>
+                        <a href="" class=" hover:text-app-color-one transition-all">Privacy Policy</a>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-y-3">
+                    <h3 class=" text-2xl font-Montserrat font-bold text-white">About</h3>
+                    <div class="flex flex-col text-sm sm:text-base font-Montserrat text-white">
+                        <a href="" class=" hover:text-app-color-one transition-all">History</a>
+                        <a href="" class=" hover:text-app-color-one transition-all">Our Team</a>
+                        <a href="" class=" hover:text-app-color-one transition-all">Brand Guidelines</a>
+                        <a href="" class=" hover:text-app-color-one transition-all">Terms & Condition</a>
+                        <a href="" class=" hover:text-app-color-one transition-all">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
